@@ -1,0 +1,8 @@
+CURSO JAVASCRIPT ES6
+
+COMANDOS e configurações
+Aula 07 - rest/spread
+terminal
+- yarn add @babel/plugin-proposal-object-rest-spread
+babelrc
+- "plugins": ["@babel/plugin-proposal-object-rest-spread"]
