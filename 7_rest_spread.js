@@ -24,8 +24,8 @@ console.log(c);
 
 // com function
 
-function soma(a, b) {
-    return a + b;
+function soma(...params) {
+    return params.reduce((total, next) => total + next);
 }
 
-console.log(soma(1, 3));
+console.log(soma(1, 3, 4));
