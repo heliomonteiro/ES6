@@ -1,5 +1,7 @@
 // REST
 
+/*
+// com objeto
 const usuario = {
     nome: 'Helio',
     idade: 31,
@@ -10,3 +12,13 @@ const { nome, ...resto} = usuario;
 
 console.log(nome);
 console.log(resto);
+*/
+
+// com array
+const arr = [1, 2, 3, 4];
+
+const [a , b, ... c] = arr;
+
+console.log(a);
+console.log(b);
+console.log(c);
