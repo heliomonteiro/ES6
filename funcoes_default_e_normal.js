@@ -1,4 +1,4 @@
-export function soma (a,b) {
+export default function soma (a,b) {
     return a + b;
 }
 

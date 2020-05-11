@@ -94,7 +94,31 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.soma = soma;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./funcoes.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.soma = soma;\nexports.sub = sub;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\nfunction sub(a, b) {\n  return a - b;\n}\n\n//# sourceURL=webpack:///./funcoes.js?");
+
+/***/ }),
+
+/***/ "./funcoes_default.js":
+/*!****************************!*\
+  !*** ./funcoes_default.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports[\"default\"] = soma;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./funcoes_default.js?");
+
+/***/ }),
+
+/***/ "./funcoes_default_e_normal.js":
+/*!*************************************!*\
+  !*** ./funcoes_default_e_normal.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports[\"default\"] = soma;\nexports.sub = sub;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\nfunction sub(a, b) {\n  return a - b;\n}\n\n//# sourceURL=webpack:///./funcoes_default_e_normal.js?");
 
 /***/ }),
 
@@ -106,7 +130,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _funcoes = __webpack_require__(/*! ./funcoes */ \"./funcoes.js\");\n\nconsole.log((0, _funcoes.soma)(3, 2));\n\n//# sourceURL=webpack:///./main.js?");
+eval("\n\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nvar _funcoes_default = _interopRequireDefault(__webpack_require__(/*! ./funcoes_default */ \"./funcoes_default.js\"));\n\nvar _funcoes_default_e_normal = _interopRequireWildcard(__webpack_require__(/*! ./funcoes_default_e_normal */ \"./funcoes_default_e_normal.js\"));\n\nvar funcoes = _interopRequireWildcard(__webpack_require__(/*! ./funcoes */ \"./funcoes.js\"));\n\nfunction _getRequireWildcardCache() { if (typeof WeakMap !== \"function\") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== \"object\" && typeof obj !== \"function\") { return { \"default\": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj[\"default\"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { \"default\": obj }; }\n\n// importando funcoes default - Função default permite ser chamada por alias\n// importando funcoes e funcoes default misturadas \n//import soma, {sub as subtracao} from './funcoes_default_e_normal'; // funcao pode ser renomeada assim \nconsole.log('funcao default');\nconsole.log((0, _funcoes_default[\"default\"])(3, 2));\nconsole.log('funcao normal e default');\nconsole.log((0, _funcoes_default_e_normal[\"default\"])(3, 2));\nconsole.log((0, _funcoes_default_e_normal.sub)(3, 2));\nconsole.log('funcoes importadas de uma vez');\nconsole.log(funcoes.soma(3, 2));\n\n//# sourceURL=webpack:///./main.js?");
 
 /***/ })
 
