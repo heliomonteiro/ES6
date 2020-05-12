@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './src/main.js', //Arquivo principal onde escreve codigo ES6...
+    entry: ['@babel/polyfill', './src/main.js'], //Arquivo principal onde escreve codigo ES6...
     output: { // Para qual arquivo deve enviar código convertido para compatibilidade antes ES6
         path: __dirname + '/public', //diretorio raiz
         filename: 'bundle.js', //arquivo bundle como já estava
