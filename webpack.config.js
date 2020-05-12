@@ -1,8 +1,11 @@
 module.exports = {
-    entry: './main.js', //Arquivo principal onde escreve codigo ES6...
+    entry: './src/main.js', //Arquivo principal onde escreve codigo ES6...
     output: { // Para qual arquivo deve enviar código convertido para compatibilidade antes ES6
-        path: __dirname, //diretorio raiz
+        path: __dirname + '/public', //diretorio raiz
         filename: 'bundle.js', //arquivo bundle como já estava
+    },
+    devServer: {
+        contentBase: __dirname + '/public'
     },
     module: {
         rules: [ //Diz como o webpack deve comportar ao importar novos arquivos js

@@ -44,3 +44,37 @@ module.exports = {
 terminal
 Instalar babel-loader como dependencia
 - yarn add babel-loader -D
+
+
+webpack server
+- criar pastas src e public
+- mover main.js para src ( todos arquivos que webpack precisa monitorar)
+- mover index.html para public (arquivos que webpack nao precisa monitorar)
+- no webpack.config realizar estas alterações
+
+instalar dev server
+- yarn add webpack-dev-server -D
+
+- webpack config inserir após output
+devServer: {
+    contentBase: __dirname + '/public'
+},
+
+- package.json alterar o scripts para trabalhar com o server
+"scripts": {
+    "dev": "webpack-dev-server --mode=development"
+}
+
+-- yarn dev (para testar)
+
+obs.: o webpack server não cria o bundle.js, ele aparece embutido para trabalhar offline.
+
+Para produção, criar script build
+- package.json, incluir
+"scripts": {
+    ...,
+    "build": "webpack --mode=production"
+}
+
+- yarn build
+Aí sim vai gerar o bundle.js
