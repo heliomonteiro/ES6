@@ -1,34 +1,18 @@
-const minhaPromise = () => new Promise((resolve, reject) => {
-    setTimeout(() => { resolve('OK')}, 2000);
-});
+import axios from 'axios';
 
-/* PROMISE NORMAL
+class Api {
+    static async getUserInfo(username) {
 
-minhaPromise().then(response => {
-        console.log(response);
+        try{
+            const response = await axios.get(`https://api.github.com/users/${username}`);
 
-        minhaPromise().then(response => {
             console.log(response);
+        } catch(err) {
+            console.warn('Erro na API');
+        }
 
-            minhaPromise().then(response => {
-                console.log(response);
-            })
-        })
-    })
-
-ABAIXO PROMISSE UTILIZANDO ASYNC/AWAIT
-*/
-
-//async function executaPromise() {
-//    console.log(await minhaPromise());
-//    console.log(await minhaPromise());
-//    console.log(await minhaPromise());
-//}
-
-const executaPromise = async () => {
-    console.log(await minhaPromise());
-    console.log(await minhaPromise());
-    console.log(await minhaPromise());
+    }
 }
 
-executaPromise();
+Api.getUserInfo('heliomonteiro');
+Api.getUserInfo('heliomonteiross');
