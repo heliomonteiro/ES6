@@ -1,18 +1,29 @@
-import axios from 'axios';
+class App {
+    constructor() {
+        this.repositories = [];
 
-class Api {
-    static async getUserInfo(username) {
+        this.formEl = document.getElementById('repo-form');
 
-        try{
-            const response = await axios.get(`https://api.github.com/users/${username}`);
+        this.registerHandlers();
+    }
 
-            console.log(response);
-        } catch(err) {
-            console.warn('Erro na API');
-        }
 
+    registerHandlers() {
+        this.formEl.onsubmit = event => this.addRepository(event);
+    }
+
+    addRepository(event) {
+        event.preventDefault();
+
+        this.repositories.push({
+            name: 'heliomonteiro',
+            description: 'Tire a sua idéia do papel e dê vida à sua startup.',
+            avatar_url: 'https://avatars0.githubusercontent.com/u/28929274?v=4',
+            html_url: 'https://github.com/heliomonteiro/ES6',
+        });
+
+        console.log(this.repositories);
     }
 }
 
-Api.getUserInfo('heliomonteiro');
-Api.getUserInfo('heliomonteiross');
+new App();

@@ -78,3 +78,12 @@ Para produção, criar script build
 
 - yarn build
 Aí sim vai gerar o bundle.js
+
+
+ASYNC/AWAIT - do ES8
+- yarn add @babel/plugin-transform-async-to-generator -D
+- yarn add @babel/polyfill -D
+- no babelrc incluir @babel/plugin-transform-async-to-generator@7.8.3
+
+AXIOS
+- yarn add axios
