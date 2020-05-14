@@ -16,6 +16,18 @@ class App {
         this.formEl.onsubmit = event => this.addRepository(event);
     }
 
+    setLoading(loading = true) {
+        if(loading === true) {
+            let loadingEl = document.createElement('span');
+            loadingEl.appendChild(document.createTextNode('Carregando...'));
+            loadingEl.setAttribute('id','loading');
+
+            this.formEl.appendChild(loadingEl);
+        } else {
+            document.getElementById('loading').remove();
+        }
+    }
+
     //adiciona repositorio do github no vetor repositories
     async addRepository(event) {
         //evita o form de recrregar a página
@@ -26,22 +38,30 @@ class App {
         if(repoInput.length === 0)
             return;
 
-        const response = await api.get(`/repos/${repoInput}`);
+        this.setLoading();
 
-        const {name, description, html_url, owner: { avatar_url } } = response.data;
+        try {
+            const response = await api.get(`/repos/${repoInput}`);
 
-        this.repositories.push({
-            name,
-            description,
-            avatar_url,
-            html_url,
-        });
-
-        this.inputEl.value = '';
-
-        // testar react-community/react-navigation
-
-        this.render();
+            const {name, description, html_url, owner: { avatar_url } } = response.data;
+    
+            this.repositories.push({
+                name,
+                description,
+                avatar_url,
+                html_url,
+            });
+    
+            this.inputEl.value = '';
+    
+            // testar react-community/react-navigation
+    
+            this.render();
+        } catch(err) {
+            alert('O repositório não existe');
+        }
+        
+        this.setLoading(false);
     }
 
     render() {
